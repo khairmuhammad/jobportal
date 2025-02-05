@@ -9,14 +9,10 @@ public class Skills {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private String name;
-
-    private String experience;
-
     private String experienceLevel;
-
     private String yearsOfExperience;
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -26,20 +22,19 @@ public class Skills {
     public Skills() {
     }
 
-    public Skills(int id, String name, String experience, String experienceLevel, String yearsOfExperience, JobSeekerProfile jobSeekerProfile) {
+    public Skills(Integer id, String name, String experienceLevel, String yearsOfExperience, JobSeekerProfile jobSeekerProfile) {
         this.id = id;
         this.name = name;
-        this.experience = experience;
         this.experienceLevel = experienceLevel;
         this.yearsOfExperience = yearsOfExperience;
         this.jobSeekerProfile = jobSeekerProfile;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -49,14 +44,6 @@ public class Skills {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getExperience() {
-        return experience;
-    }
-
-    public void setExperience(String experience) {
-        this.experience = experience;
     }
 
     public String getExperienceLevel() {
@@ -88,7 +75,6 @@ public class Skills {
         return "Skills{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", experience='" + experience + '\'' +
                 ", experienceLevel='" + experienceLevel + '\'' +
                 ", yearsOfExperience='" + yearsOfExperience + '\'' +
                 ", jobSeekerProfile=" + jobSeekerProfile +
